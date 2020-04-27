@@ -1,0 +1,33 @@
+#show-diagram-button{
+    width: 147px;
+    margin: auto;
+    box-shadow: 2px 2px 2px grey;
+    border-radius: 5px;
+  }
+  
+#show-diagram-button .dx-button{
+   width: 147px;
+}
+
+.modal-popup-button{
+  margin-left: 100px;
+}
+
+.common-model-modal{
+  max-width:925px !important;
+}
+.modal-xl{
+  max-width:925px !important;
+}
+ .dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+}
+ 
+  

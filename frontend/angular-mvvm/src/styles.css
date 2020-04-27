@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap-cerulean.css";
+
+app-root{
+    display: block;
+    margin: auto;
+}
+
+.zoomSlider{
+    top: 0px !important; 
+    left: -5px !important;
+  }
+  
+.dx-widget{
+    font-size: 12px !important;
+}
+

@@ -1,0 +1,45 @@
+<dx-data-grid 
+    [dataSource]="modelData" 
+    [showBorders]="true"
+    [hoverStateEnabled]="true"
+    (onRowClick) = "rowClickHandler($event)">
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-pager 
+        [showPageSizeSelector]="true" 
+        [allowedPageSizes]="[5, 10, 20]" 
+        [showInfo]="true">
+    </dxo-pager>
+    <dxo-selection mode="single"></dxo-selection>
+    <dxo-load-panel [enabled]="true"></dxo-load-panel>
+    <dxo-scrolling mode="virtual"></dxo-scrolling>
+    <dxo-sorting mode="none"></dxo-sorting>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxi-column 
+        dataField="architectureId" 
+        alignment='center' 
+        caption='Architecture ID' 
+        [allowEditing]="false"
+        [width]="125">
+    </dxi-column>
+    <dxi-column 
+        dataField="architectureName" 
+        alignment='center' 
+        caption='Architecture Name' 
+        [allowEditing]="false"
+        [width]="175">
+    </dxi-column>
+    <dxi-column 
+        dataField="lastModifiedDate" 
+        alignment='center' 
+        caption='Last Modified Date' 
+        [allowEditing]="false"
+        [width]="125">
+    </dxi-column>
+    <dxi-column 
+        dataField="lastModifiedBy" 
+        alignment='center' 
+        caption='Last Modified By' 
+        [allowEditing]="false"
+        [width]="125">
+    </dxi-column>
+</dx-data-grid>

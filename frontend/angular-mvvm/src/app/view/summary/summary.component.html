@@ -1,0 +1,18 @@
+<div id='summary-component'>
+    <div id='select-menu-container'>
+        <select-architecture-dropdown
+            (selection)="onNewSelection($event)"
+        ></select-architecture-dropdown>
+       <diagram-modal-popup
+        [selectedRow] = "selectedRow"
+       ></diagram-modal-popup>
+    </div>
+    <div id='grid-container'>
+        <related-architectures-grid
+          [selectedRow] = "selectedRow">
+        </related-architectures-grid>        
+        <related-viewpoints-grid
+            [selectedRow] = "selectedRow">
+        </related-viewpoints-grid>
+    </div>
+</div>

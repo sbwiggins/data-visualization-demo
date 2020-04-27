@@ -1,0 +1,89 @@
+#root{
+  display: block;
+  margin: auto;
+}
+
+#main-title{
+  display: block;
+  margin: auto;
+  width: 500px;
+}
+
+ /* .header-text-color{
+  color: rgb(71, 68, 68); 
+}  */
+
+.dx-widget{
+  font-size: 12px !important;
+}
+
+#select-menu-container{
+  display:flex;
+  width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+#select-drop-down{
+  width: 600px;
+  margin: auto;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 5px;
+}
+
+#show-diagram-button{
+  width: 147px;
+  margin: auto;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 5px;
+}
+
+#show-diagram-button .dx-button{
+   width: 147px;
+}
+
+#grid-container {
+  display: block;
+  margin: auto;
+  
+  width:1100px; 
+  background: rgb(255, 253, 251);
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding-bottom: 25px; 
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow: 2px 2px 2px grey; 
+}
+
+#related-architectures-grid{
+  width: 735px;
+  margin: auto;
+}
+
+#editing-related-architectures-grid{
+  width: 900px;
+  margin: auto;
+}
+#related-views-grid{
+  width: 985px;
+  margin: auto;
+  
+}
+
+#common-model-diagram{
+  width: 825px;
+  height: 500px;
+  margin: auto;  
+  border: 1px solid #333;
+}
+
+.common-model-modal{
+  max-width:925px !important;
+}
+
+.zoomSlider{
+  top: 0px !important; 
+  left: -5px !important;
+}

@@ -1,0 +1,51 @@
+<div id="home-container">
+    <div class="jumbotron">
+        <h1 >Data Visualization Demo(Angular-MVVM)</h1>
+        <p class="lead">This demonstrates <strong>Steven Wiggins' skills as a <u>Full Stack Developer</u> and <u>Data Engineer</u></strong> using small code samples.
+            This demo uses the <strong><a href="https://gojs.net/latest/samples/index.html">GoJS Javascript Data Visualization library</a></strong> to diagram various data models from the
+            <strong><a href="https://dodcio.defense.gov/Library/DoD-Architecture-Framework/dodaf20_models/"> DoD Architecture Framework (DoDAF) Meta Model.</a></strong>
+        </p>
+        <br />
+        <p class="lead">
+        The frontend is designed with Model-View-ViewModel(MVVM) architecture, using 
+            <strong><a href="https://angular.io/"> Angular,</a>
+                <a href="https://js.devexpress.com/"> DevExtreme,</a>
+                <a href="https://getbootstrap.com/"> BootStrap, </a></strong>
+        Javascript Frameworks. And using modern languages: <strong> Javascript ECMAScript2015 (ES6),  HTML5, and CSS3.</strong>  A <strong> Microsoft SQL Server database, </strong> powers the server-side backend.
+        The backend implementes <strong>MVC/Web API REST architecture</strong> with controllers/services using 2 different frameworks: <strong>C#/ASP.NET</strong> and <strong>Node.JS/Express. </strong>
+        </p>
+        <br />
+        <p class="lead">
+        Source code is available on <strong><a href="https://github.com/sbwiggins/samples"> Github</a></strong>
+        </p>
+        <p><a routerLink ="/summary" class="btn btn-dark btn-lg">See Demo &raquo;</a></p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h2 class="bootstrap">Architecture Summary</h2>
+            <p>This page summarizes DoDAF Architecture and Viewpoint data. Two <strong>DevExtreme</strong> DataGrids display DoDAF Model data using <strong>C#/.NET based REST services. </strong>
+                Services extract database tables with <strong>.NET Entity Framework 6</strong> Object Relational Mapper (ORM).
+                A modal popup with a <strong>GoJS diagram</strong> is available to visualize this data. </p>
+            <p><a class="btn btn-outline-dark" routerLink="/summary">Go to page &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Relating Architectures</h2>
+            <p>The user can define new DoDAF Architecture relationships using a <strong>DevExtreme</strong> Datagrid widget.
+                The frontend uses <strong>AJAX</strong> calls to <strong>Node.JS/Express REST API services </strong>that perform
+                <strong> CRUD opertions</strong> on the database.  Since <strong>Node.JS</strong> converts SQL result sets into <strong>JSON</strong> objects,
+                <strong> SQL stored procedures</strong> are used instead of an ORM.
+            </p>
+            <p><a class="btn btn-outline-dark" routerLink="/architectures">Go to page &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Relating Viewpoints</h2>
+            <p>The user can define new  <strong><a href="https://dodcio.defense.gov/Library/DoD-Architecture-Framework/dodaf20_models/"> DoDAF ViewPoint </a></strong>
+                relationships using a <strong>DevExtreme</strong> Datagrid widget.
+                The frontend uses <strong>AJAX</strong> calls to <strong>Node.JS/Express REST API services </strong>that perform
+                <strong> CRUD opertions</strong> on the database.  Since <strong>Node.JS</strong> converts SQL result sets into <strong>JSON</strong> objects,
+                <strong> SQL stored procedures</strong> are used instead of an ORM.
+            </p>
+            <p><a class="btn btn-outline-dark" routerLink="/views">Go to page &raquo;</a></p>
+        </div>
+    </div>
+</div>

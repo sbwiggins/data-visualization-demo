@@ -1,0 +1,54 @@
+<div id='related-architectures-grid'>
+    <h2 class='header-text-color'>Architectures Related to {{selectedRow.architectureName}}</h2>
+    <dx-data-grid 
+        [dataSource]="modelData" 
+        [showBorders]="true">
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-pager 
+            [showPageSizeSelector]="true" 
+            [allowedPageSizes]="[5, 10, 20]" 
+            [showInfo]="true">
+        </dxo-pager>
+        <dxo-selection mode="single"></dxo-selection>
+        <dxo-load-panel [enabled]="true"></dxo-load-panel>
+        <dxo-scrolling mode="virtual"></dxo-scrolling>
+        <dxo-sorting mode="none"></dxo-sorting>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxi-column 
+            dataField="architectureId" 
+            alignment='center' 
+            caption='Architecture ID' 
+            [allowEditing]="false"
+            [width]="125">
+        </dxi-column>
+        <dxi-column 
+            dataField="architectureName" 
+            alignment='center' 
+            caption='Architecture Name' 
+            [allowEditing]="false"
+            [width]="175">
+        </dxi-column>
+        <dxi-column 
+            dataField="relatedArchId" 
+            alignment='center' 
+            caption='Related Architect ID' 
+            [allowEditing]="false"
+            [width]="140">
+        </dxi-column>
+        <dxi-column 
+            dataField="relatedArchName" 
+            alignment='center' 
+            caption='Related Architecture Name' 
+            [allowEditing]="false"
+            [width]="175">
+        </dxi-column>
+        <dxi-column 
+            dataField="relateTypeName" 
+            alignment='center' 
+            caption='Relationship Type' 
+            [allowEditing]="false"
+            [width]="115">
+        </dxi-column>
+       
+    </dx-data-grid>
+</div>

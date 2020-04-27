@@ -1,0 +1,8 @@
+@import "./ZoomSlider.css";
+
+#common-model-diagram{
+    width: 825px;
+    height: 500px;
+    margin: auto;  
+    border: 1px solid #333;
+  }

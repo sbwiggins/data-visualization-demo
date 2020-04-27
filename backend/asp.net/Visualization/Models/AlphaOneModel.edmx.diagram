@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a1596d87d7564a96b0fce73f985d66a8" Name="Diagram1">
+        <EntityTypeShape EntityType="AlphaOneModel.access_level" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.arch" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.architecture" Width="1.5" PointX="2.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.iads_version" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.IadsVersion" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.product" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.project" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.relate_type" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.related_architecture" Width="1.5" PointX="5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.related_view" Width="1.5" PointX="5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.type" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.vw_architecture_product_in_dw" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlphaOneModel.VW_Architecture_Viewer_Popup_Metadata" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="AlphaOneModel.FK_related_architecture_architecture_parent" ManuallyRouted="false" />
+        <AssociationConnector Association="AlphaOneModel.FK_related_architecture_related_architecture_child" ManuallyRouted="false" />
+        <AssociationConnector Association="AlphaOneModel.FK_related_view_primary_architecture" ManuallyRouted="false" />
+        <AssociationConnector Association="AlphaOneModel.FK_related_view_related_architecture" ManuallyRouted="false" />
+        <AssociationConnector Association="AlphaOneModel.FK_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="AlphaOneModel.FK_User_User2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AlphaOneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="access_level">
+          <Key>
+            <PropertyRef Name="access_level_id" />
+          </Key>
+          <Property Name="access_level_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="arch">
+          <Key>
+            <PropertyRef Name="arch_id" />
+          </Key>
+          <Property Name="arch_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="create_dttm" Type="datetime" Nullable="false" />
+          <Property Name="narch_top_org_id" Type="int" />
+          <Property Name="src_sys_id" Type="int" />
+          <Property Name="stat_eff_dt" Type="datetime" />
+          <Property Name="arch_descr_tx" Type="varchar" MaxLength="4000" />
+          <Property Name="arch_nm" Type="varchar" MaxLength="50" />
+          <Property Name="arch_maj_ver_qy" Type="int" />
+          <Property Name="arch_min_ver_qy" Type="int" />
+          <Property Name="arch_rel_ver_cd" Type="varchar" MaxLength="20" />
+          <Property Name="arch_vw_ty_cd" Type="varchar" MaxLength="1" />
+          <Property Name="sarch_conf_ctrl_cd" Type="varchar" MaxLength="1" />
+          <Property Name="sarch_ty_cd" Type="varchar" MaxLength="1" />
+          <Property Name="src_sys_user_id" Type="int" />
+          <Property Name="src_sys_arch_key" Type="varchar" MaxLength="20" />
+          <Property Name="msn_id" Type="int" />
+          <Property Name="csc_id" Type="int" />
+          <Property Name="oparch_cat_cd" Type="int" />
+          <Property Name="arch_stat_nm" Type="varchar" MaxLength="50" />
+          <Property Name="arch_type_nm" Type="varchar" MaxLength="50" />
+          <Property Name="arch_stat_cd" Type="varchar" MaxLength="5" />
+          <Property Name="access_level_nm" Type="varchar" MaxLength="100" />
+          <Property Name="app_version_tx" Type="varchar" MaxLength="500" />
+          <Property Name="arch_poc_user_id" Type="int" />
+          <Property Name="arch_poc_user_nm" Type="varchar" MaxLength="100" />
+          <Property Name="request_dt" Type="datetime" />
+          <Property Name="src_sys_user_nm" Type="varchar" MaxLength="100" />
+          <Property Name="cat_src_sys_id" Type="int" />
+          <Property Name="cat_arch_id" Type="int" />
+          <Property Name="arch_vsn_reason_tx" Type="varchar" MaxLength="250" />
+          <Property Name="sc_nm" Type="varchar" MaxLength="100" />
+          <Property Name="with_ier" Type="bit" />
+          <Property Name="iads_version_name" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="architecture">
+          <Key>
+            <PropertyRef Name="architecture_id" />
+          </Key>
+          <Property Name="architecture_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="is_published" Type="bit" Nullable="false" />
+          <Property Name="last_modified_date" Type="datetime" />
+          <Property Name="name" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="4000" />
+          <Property Name="purpose" Type="varchar" MaxLength="500" />
+          <Property Name="url" Type="varchar" MaxLength="500" />
+          <Property Name="security_classification_id" Type="int" />
+          <Property Name="access_level_id" Type="int" />
+          <Property Name="type_id" Type="int" />
+          <Property Name="mission_area_id" Type="int" />
+          <Property Name="methodology_id" Type="int" />
+          <Property Name="development_tool_id" Type="int" />
+          <Property Name="proponent_id" Type="int" />
+          <Property Name="project_start_date" Type="datetime" />
+          <Property Name="target_completion_date" Type="datetime" />
+          <Property Name="validation_date" Type="datetime" />
+          <Property Name="valid_until_date" Type="datetime" />
+          <Property Name="developer_organization" Type="varchar" MaxLength="250" />
+          <Property Name="contributing_organizations" Type="varchar" MaxLength="250" />
+          <Property Name="validating_organizations" Type="varchar" MaxLength="250" />
+          <Property Name="approval_authority_organization" Type="varchar" MaxLength="250" />
+          <Property Name="approval_version_id" Type="int" />
+          <Property Name="approval_version_change_date" Type="datetime" />
+          <Property Name="related_av1_id" Type="int" />
+          <Property Name="source_system_id" Type="varchar" MaxLength="20" />
+          <Property Name="dars_registration_date" Type="datetime" />
+          <Property Name="dars_timeframe_start_date" Type="datetime" />
+          <Property Name="dars_timeframe_end_date" Type="datetime" />
+          <Property Name="metadata_created_date" Type="datetime" />
+          <Property Name="metadata_last_updated_date" Type="datetime" />
+          <Property Name="poc_authorization_user_id" Type="int" />
+          <Property Name="is_av1_externally_funded_in" Type="bit" Nullable="false" />
+          <Property Name="is_archived" Type="bit" Nullable="false" />
+          <Property Name="iads_version_audit_id" Type="int" />
+          <Property Name="title_dissemination_id" Type="int" />
+          <Property Name="proj_dissemination_id" Type="int" />
+          <Property Name="description_dissemination_id" Type="int" />
+          <Property Name="owner_org_dissemination_id" Type="int" />
+          <Property Name="publishing_org_dissemination_id" Type="int" />
+          <Property Name="owner_org_country_id" Type="int" Nullable="false" />
+          <Property Name="publishing_org_country_id" Type="int" Nullable="false" />
+          <Property Name="contact_org_country_id" Type="int" Nullable="false" />
+          <Property Name="title_classification_id" Type="int" />
+          <Property Name="proj_classification_justification" Type="varchar" MaxLength="4000" />
+          <Property Name="description_classification_id" Type="int" />
+          <Property Name="poc_org_name" Type="varchar" MaxLength="250" />
+          <Property Name="owner_org_name" Type="varchar" MaxLength="250" />
+          <Property Name="contact_org_name" Type="varchar" MaxLength="250" />
+          <Property Name="owner_org_classification_id" Type="int" />
+          <Property Name="publishing_org_classification_id" Type="int" />
+          <Property Name="contact_org_classification_id" Type="int" />
+          <Property Name="aggregated_data_classification_justification" Type="varchar" MaxLength="4000" />
+          <Property Name="proj_classified_by" Type="varchar" MaxLength="250" />
+          <Property Name="project_creation_date" Type="datetime" />
+          <Property Name="ecsd_submission_date" Type="datetime" />
+          <Property Name="contact_org_dissemination_id" Type="int" />
+          <Property Name="is_excluded_from_arch_navigation" Type="bit" Nullable="false" />
+          <Property Name="bcac_id" Type="int" />
+          <Property Name="ekr_proj_url" Type="varchar" MaxLength="500" />
+          <Property Name="time_period_reason" Type="varchar" MaxLength="255" />
+          <Property Name="technical_poc_name" Type="varchar" MaxLength="250" />
+          <Property Name="technical_poc_email" Type="varchar" MaxLength="100" />
+          <Property Name="functional_poc_name" Type="varchar" MaxLength="250" />
+          <Property Name="functional_poc_email" Type="varchar" MaxLength="100" />
+          <Property Name="mission_thread_organization_id" Type="int" />
+          <Property Name="mission_thread_capability_id" Type="int" />
+          <Property Name="mission_thread_echelon_id" Type="int" />
+          <Property Name="mission_thread_mission_thread_id" Type="int" />
+          <Property Name="mission_thread_description" Type="varchar" MaxLength="250" />
+          <Property Name="mission_thread_primary_proponent_id" Type="int" />
+          <Property Name="life_cycle_phase_id" Type="int" />
+          <Property Name="baseline_state_id" Type="int" />
+          <Property Name="echelon_id" Type="int" />
+          <Property Name="functional_area_id" Type="int" />
+          <Property Name="unit_size_id" Type="int" />
+          <Property Name="unit_amplifier" Type="bit" Nullable="false" />
+          <Property Name="icon_id" Type="int" />
+          <Property Name="category_id" Type="int" />
+        </EntityType>
+        <EntityType Name="iads_version">
+          <Key>
+            <PropertyRef Name="iads_version_id" />
+          </Key>
+          <Property Name="iads_version_id" Type="int" Nullable="false" />
+          <Property Name="iads_version_name" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="iads_version_desc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IadsVersion">
+          <Key>
+            <PropertyRef Name="arch_id" />
+            <PropertyRef Name="product_ID" />
+          </Key>
+          <Property Name="arch_id" Type="int" Nullable="false" />
+          <Property Name="product_ID" Type="int" Nullable="false" />
+          <Property Name="iads_version_name" Type="varchar" MaxLength="32" />
+          <Property Name="CAT_ARCH_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="250" />
+          <Property Name="has_template" Type="bit" />
+          <Property Name="create_dttm" Type="datetime" />
+          <Property Name="create_user_id" Type="int" />
+          <Property Name="updt_dttm" Type="datetime" />
+          <Property Name="updt_user_id" Type="int" />
+          <Property Name="short_description" Type="varchar" MaxLength="50" />
+          <Property Name="is_active" Type="bit" />
+          <Property Name="is_dodaf_dw" Type="bit" Nullable="false" />
+          <Property Name="view_id" Type="int" />
+          <Property Name="iads_description" Type="varchar" MaxLength="250" />
+          <Property Name="is_mission_thread_document_type" Type="bit" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="proj_id" />
+          </Key>
+          <Property Name="proj_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="proj_nm" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="proj_type_cd" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="arch_cat_id" Type="int" />
+          <Property Name="sc_id" Type="int" Nullable="false" />
+          <Property Name="sc_cd" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="proj_short_nm" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="proj_stat_cd" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="proj_stat_eff_dt" Type="datetime" Nullable="false" />
+          <Property Name="create_dttm" Type="datetime" Nullable="false" />
+          <Property Name="create_user_id" Type="int" Nullable="false" />
+          <Property Name="updt_dttm" Type="datetime" Nullable="false" />
+          <Property Name="updt_user_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relate_type">
+          <Key>
+            <PropertyRef Name="relate_type_id" />
+          </Key>
+          <Property Name="relate_type_id" Type="int" Nullable="false" />
+          <Property Name="relate_type_name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="related_architecture">
+          <Key>
+            <PropertyRef Name="architecture_id" />
+            <PropertyRef Name="related_architecture_id" />
+          </Key>
+          <Property Name="architecture_id" Type="int" Nullable="false" />
+          <Property Name="related_architecture_id" Type="int" Nullable="false" />
+          <Property Name="relate_type_id" Type="int" />
+        </EntityType>
+        <EntityType Name="related_view">
+          <Key>
+            <PropertyRef Name="view_id" />
+            <PropertyRef Name="related_view_id" />
+            <PropertyRef Name="architecture_id" />
+            <PropertyRef Name="related_architecture_id" />
+          </Key>
+          <Property Name="view_id" Type="int" Nullable="false" />
+          <Property Name="related_view_id" Type="int" Nullable="false" />
+          <Property Name="architecture_id" Type="int" Nullable="false" />
+          <Property Name="related_architecture_id" Type="int" Nullable="false" />
+          <Property Name="relate_type_id" Type="int" />
+        </EntityType>
+        <EntityType Name="type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="category_id" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="FullName" Type="varchar" MaxLength="201" StoreGeneratedPattern="Computed" />
+          <Property Name="FullNameLastFirst" Type="varchar" MaxLength="202" StoreGeneratedPattern="Computed" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="LocalDomainUserName" Type="varchar" MaxLength="200" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="LastModified" Type="datetime" Nullable="false" />
+          <Property Name="LastModifiedBy" Type="int" />
+          <Property Name="SuspendedDate" Type="datetime2" Precision="7" />
+          <Property Name="SuspenseJustification" Type="nvarchar" MaxLength="2000" />
+          <Property Name="SuspenseWarningEmailDate" Type="datetime2" Precision="7" />
+          <Property Name="SuspensedEmailDate" Type="datetime2" Precision="7" />
+          <Property Name="IsSuspensionManual" Type="bit" />
+          <Property Name="RobAcceptedDate" Type="datetime2" Precision="7" />
+          <Property Name="RobArCadie" Type="bit" Nullable="false" />
+          <Property Name="RobMdTws" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AlphaOne.dbo.vw_architecture_product_in_dw' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_architecture_product_in_dw">
+          <Key>
+            <PropertyRef Name="arch_id" />
+            <PropertyRef Name="product_name" />
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="iads_version_id" />
+          </Key>
+          <Property Name="cat_arch_id" Type="int" />
+          <Property Name="arch_id" Type="int" Nullable="false" />
+          <Property Name="product_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="iads_version_name" Type="varchar" MaxLength="32" />
+          <Property Name="iads_version_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AlphaOne.dbo.VW_Architecture_Viewer_Popup_Metadata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VW_Architecture_Viewer_Popup_Metadata">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="90" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="4000" />
+          <Property Name="Type" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="201" />
+          <Property Name="CreatedByEmail" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedDate" Type="nvarchar" MaxLength="4000" />
+          <Property Name="LastUpdatedDate" Type="nvarchar" MaxLength="4000" />
+          <Property Name="AccessLevel" Type="varchar" MaxLength="100" />
+          <Property Name="FordesaProjectId" Type="int" />
+        </EntityType>
+        <Association Name="FK_related_architecture_architecture_parent">
+          <End Role="architecture" Type="Self.architecture" Multiplicity="1" />
+          <End Role="related_architecture" Type="Self.related_architecture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="architecture">
+              <PropertyRef Name="architecture_id" />
+            </Principal>
+            <Dependent Role="related_architecture">
+              <PropertyRef Name="architecture_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_related_architecture_related_architecture_child">
+          <End Role="architecture" Type="Self.architecture" Multiplicity="1" />
+          <End Role="related_architecture" Type="Self.related_architecture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="architecture">
+              <PropertyRef Name="architecture_id" />
+            </Principal>
+            <Dependent Role="related_architecture">
+              <PropertyRef Name="related_architecture_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_related_view_primary_architecture">
+          <End Role="architecture" Type="Self.architecture" Multiplicity="1" />
+          <End Role="related_view" Type="Self.related_view" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="architecture">
+              <PropertyRef Name="architecture_id" />
+            </Principal>
+            <Dependent Role="related_view">
+              <PropertyRef Name="architecture_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_related_view_related_architecture">
+          <End Role="architecture" Type="Self.architecture" Multiplicity="1" />
+          <End Role="related_view" Type="Self.related_view" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="architecture">
+              <PropertyRef Name="architecture_id" />
+            </Principal>
+            <Dependent Role="related_view">
+              <PropertyRef Name="related_architecture_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="User1" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User2">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="User1" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="LastModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AlphaOneModelStoreContainer">
+          <EntitySet Name="access_level" EntityType="Self.access_level" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="arch" EntityType="Self.arch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="architecture" EntityType="Self.architecture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iads_version" EntityType="Self.iads_version" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IadsVersion" EntityType="Self.IadsVersion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="relate_type" EntityType="Self.relate_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="related_architecture" EntityType="Self.related_architecture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="related_view" EntityType="Self.related_view" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="type" EntityType="Self.type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vw_architecture_product_in_dw" EntityType="Self.vw_architecture_product_in_dw" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_architecture_product_in_dw].[cat_arch_id] AS [cat_arch_id], 
+    [vw_architecture_product_in_dw].[arch_id] AS [arch_id], 
+    [vw_architecture_product_in_dw].[product_name] AS [product_name], 
+    [vw_architecture_product_in_dw].[product_id] AS [product_id], 
+    [vw_architecture_product_in_dw].[iads_version_name] AS [iads_version_name], 
+    [vw_architecture_product_in_dw].[iads_version_id] AS [iads_version_id]
+    FROM [dbo].[vw_architecture_product_in_dw] AS [vw_architecture_product_in_dw]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VW_Architecture_Viewer_Popup_Metadata" EntityType="Self.VW_Architecture_Viewer_Popup_Metadata" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VW_Architecture_Viewer_Popup_Metadata].[Id] AS [Id], 
+    [VW_Architecture_Viewer_Popup_Metadata].[Name] AS [Name], 
+    [VW_Architecture_Viewer_Popup_Metadata].[Description] AS [Description], 
+    [VW_Architecture_Viewer_Popup_Metadata].[Type] AS [Type], 
+    [VW_Architecture_Viewer_Popup_Metadata].[CreatedBy] AS [CreatedBy], 
+    [VW_Architecture_Viewer_Popup_Metadata].[CreatedByEmail] AS [CreatedByEmail], 
+    [VW_Architecture_Viewer_Popup_Metadata].[CreatedDate] AS [CreatedDate], 
+    [VW_Architecture_Viewer_Popup_Metadata].[LastUpdatedDate] AS [LastUpdatedDate], 
+    [VW_Architecture_Viewer_Popup_Metadata].[AccessLevel] AS [AccessLevel], 
+    [VW_Architecture_Viewer_Popup_Metadata].[FordesaProjectId] AS [FordesaProjectId]
+    FROM [dbo].[VW_Architecture_Viewer_Popup_Metadata] AS [VW_Architecture_Viewer_Popup_Metadata]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_related_architecture_architecture_parent" Association="Self.FK_related_architecture_architecture_parent">
+            <End Role="architecture" EntitySet="architecture" />
+            <End Role="related_architecture" EntitySet="related_architecture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_related_architecture_related_architecture_child" Association="Self.FK_related_architecture_related_architecture_child">
+            <End Role="architecture" EntitySet="architecture" />
+            <End Role="related_architecture" EntitySet="related_architecture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_related_view_primary_architecture" Association="Self.FK_related_view_primary_architecture">
+            <End Role="architecture" EntitySet="architecture" />
+            <End Role="related_view" EntitySet="related_view" />
+          </AssociationSet>
+          <AssociationSet Name="FK_related_view_related_architecture" Association="Self.FK_related_view_related_architecture">
+            <End Role="architecture" EntitySet="architecture" />
+            <End Role="related_view" EntitySet="related_view" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="User1" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User2" Association="Self.FK_User_User2">
+            <End Role="User" EntitySet="User" />
+            <End Role="User1" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AlphaOneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="access_level">
+          <Key>
+            <PropertyRef Name="access_level_id" />
+          </Key>
+          <Property Name="access_level_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="arch">
+          <Key>
+            <PropertyRef Name="arch_id" />
+          </Key>
+          <Property Name="arch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="create_dttm" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="narch_top_org_id" Type="Int32" />
+          <Property Name="src_sys_id" Type="Int32" />
+          <Property Name="stat_eff_dt" Type="DateTime" Precision="3" />
+          <Property Name="arch_descr_tx" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="arch_nm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="arch_maj_ver_qy" Type="Int32" />
+          <Property Name="arch_min_ver_qy" Type="Int32" />
+          <Property Name="arch_rel_ver_cd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="arch_vw_ty_cd" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="sarch_conf_ctrl_cd" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="sarch_ty_cd" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="src_sys_user_id" Type="Int32" />
+          <Property Name="src_sys_arch_key" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="msn_id" Type="Int32" />
+          <Property Name="csc_id" Type="Int32" />
+          <Property Name="oparch_cat_cd" Type="Int32" />
+          <Property Name="arch_stat_nm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="arch_type_nm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="arch_stat_cd" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="access_level_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="app_version_tx" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="arch_poc_user_id" Type="Int32" />
+          <Property Name="arch_poc_user_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="request_dt" Type="DateTime" Precision="3" />
+          <Property Name="src_sys_user_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cat_src_sys_id" Type="Int32" />
+          <Property Name="cat_arch_id" Type="Int32" />
+          <Property Name="arch_vsn_reason_tx" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="sc_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="with_ier" Type="Boolean" />
+          <Property Name="iads_version_name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="architecture">
+          <Key>
+            <PropertyRef Name="architecture_id" />
+          </Key>
+          <Property Name="architecture_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="is_published" Type="Boolean" Nullable="false" />
+          <Property Name="last_modified_date" Type="DateTime" Precision="3" />
+          <Property Name="name" Type="String" MaxLength="90" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="purpose" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="security_classification_id" Type="Int32" />
+          <Property Name="access_level_id" Type="Int32" />
+          <Property Name="type_id" Type="Int32" />
+          <Property Name="mission_area_id" Type="Int32" />
+          <Property Name="methodology_id" Type="Int32" />
+          <Property Name="development_tool_id" Type="Int32" />
+          <Property Name="proponent_id" Type="Int32" />
+          <Property Name="project_start_date" Type="DateTime" Precision="3" />
+          <Property Name="target_completion_date" Type="DateTime" Precision="3" />
+          <Property Name="validation_date" Type="DateTime" Precision="3" />
+          <Property Name="valid_until_date" Type="DateTime" Precision="3" />
+          <Property Name="developer_organization" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="contributing_organizations" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="validating_organizations" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="approval_authority_organization" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="approval_version_id" Type="Int32" />
+          <Property Name="approval_version_change_date" Type="DateTime" Precision="3" />
+          <Property Name="related_av1_id" Type="Int32" />
+          <Property Name="source_system_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dars_registration_date" Type="DateTime" Precision="3" />
+          <Property Name="dars_timeframe_start_date" Type="DateTime" Precision="3" />
+          <Property Name="dars_timeframe_end_date" Type="DateTime" Precision="3" />
+          <Property Name="metadata_created_date" Type="DateTime" Precision="3" />
+          <Property Name="metadata_last_updated_date" Type="DateTime" Precision="3" />
+          <Property Name="poc_authorization_user_id" Type="Int32" />
+          <Property Name="is_av1_externally_funded_in" Type="Boolean" Nullable="false" />
+          <Property Name="is_archived" Type="Boolean" Nullable="false" />
+          <Property Name="iads_version_audit_id" Type="Int32" />
+          <Property Name="title_dissemination_id" Type="Int32" />
+          <Property Name="proj_dissemination_id" Type="Int32" />
+          <Property Name="description_dissemination_id" Type="Int32" />
+          <Property Name="owner_org_dissemination_id" Type="Int32" />
+          <Property Name="publishing_org_dissemination_id" Type="Int32" />
+          <Property Name="owner_org_country_id" Type="Int32" Nullable="false" />
+          <Property Name="publishing_org_country_id" Type="Int32" Nullable="false" />
+          <Property Name="contact_org_country_id" Type="Int32" Nullable="false" />
+          <Property Name="title_classification_id" Type="Int32" />
+          <Property Name="proj_classification_justification" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="description_classification_id" Type="Int32" />
+          <Property Name="poc_org_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="owner_org_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="contact_org_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="owner_org_classification_id" Type="Int32" />
+          <Property Name="publishing_org_classification_id" Type="Int32" />
+          <Property Name="contact_org_classification_id" Type="Int32" />
+          <Property Name="aggregated_data_classification_justification" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="proj_classified_by" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="project_creation_date" Type="DateTime" Precision="3" />
+          <Property Name="ecsd_submission_date" Type="DateTime" Precision="3" />
+          <Property Name="contact_org_dissemination_id" Type="Int32" />
+          <Property Name="is_excluded_from_arch_navigation" Type="Boolean" Nullable="false" />
+          <Property Name="bcac_id" Type="Int32" />
+          <Property Name="ekr_proj_url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="time_period_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="technical_poc_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="technical_poc_email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="functional_poc_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="functional_poc_email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mission_thread_organization_id" Type="Int32" />
+          <Property Name="mission_thread_capability_id" Type="Int32" />
+          <Property Name="mission_thread_echelon_id" Type="Int32" />
+          <Property Name="mission_thread_mission_thread_id" Type="Int32" />
+          <Property Name="mission_thread_description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="mission_thread_primary_proponent_id" Type="Int32" />
+          <Property Name="life_cycle_phase_id" Type="Int32" />
+          <Property Name="baseline_state_id" Type="Int32" />
+          <Property Name="echelon_id" Type="Int32" />
+          <Property Name="functional_area_id" Type="Int32" />
+          <Property Name="unit_size_id" Type="Int32" />
+          <Property Name="unit_amplifier" Type="Boolean" Nullable="false" />
+          <Property Name="icon_id" Type="Int32" />
+          <Property Name="category_id" Type="Int32" />
+          <NavigationProperty Name="related_architecture" Relationship="Self.FK_related_architecture_architecture_parent" FromRole="architecture" ToRole="related_architecture" />
+          <NavigationProperty Name="related_architecture1" Relationship="Self.FK_related_architecture_related_architecture_child" FromRole="architecture" ToRole="related_architecture" />
+          <NavigationProperty Name="related_view" Relationship="Self.FK_related_view_primary_architecture" FromRole="architecture" ToRole="related_view" />
+          <NavigationProperty Name="related_view1" Relationship="Self.FK_related_view_related_architecture" FromRole="architecture" ToRole="related_view" />
+        </EntityType>
+        <EntityType Name="iads_version">
+          <Key>
+            <PropertyRef Name="iads_version_id" />
+          </Key>
+          <Property Name="iads_version_id" Type="Int32" Nullable="false" />
+          <Property Name="iads_version_name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="iads_version_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IadsVersion">
+          <Key>
+            <PropertyRef Name="arch_id" />
+            <PropertyRef Name="product_ID" />
+          </Key>
+          <Property Name="arch_id" Type="Int32" Nullable="false" />
+          <Property Name="product_ID" Type="Int32" Nullable="false" />
+          <Property Name="iads_version_name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="CAT_ARCH_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="has_template" Type="Boolean" />
+          <Property Name="create_dttm" Type="DateTime" Precision="3" />
+          <Property Name="create_user_id" Type="Int32" />
+          <Property Name="updt_dttm" Type="DateTime" Precision="3" />
+          <Property Name="updt_user_id" Type="Int32" />
+          <Property Name="short_description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+          <Property Name="is_dodaf_dw" Type="Boolean" Nullable="false" />
+          <Property Name="view_id" Type="Int32" />
+          <Property Name="iads_description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="is_mission_thread_document_type" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="proj_id" />
+          </Key>
+          <Property Name="proj_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="proj_nm" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proj_type_cd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="arch_cat_id" Type="Int32" />
+          <Property Name="sc_id" Type="Int32" Nullable="false" />
+          <Property Name="sc_cd" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proj_short_nm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proj_stat_cd" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proj_stat_eff_dt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="create_dttm" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="create_user_id" Type="Int32" Nullable="false" />
+          <Property Name="updt_dttm" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="updt_user_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relate_type">
+          <Key>
+            <PropertyRef Name="relate_type_id" />
+          </Key>
+          <Property Name="relate_type_id" Type="Int32" Nullable="false" />
+          <Property Name="relate_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="related_architecture">
+          <Key>
+            <PropertyRef Name="architecture_id" />
+            <PropertyRef Name="related_architecture_id" />
+          </Key>
+          <Property Name="architecture_id" Type="Int32" Nullable="false" />
+          <Property Name="related_architecture_id" Type="Int32" Nullable="false" />
+          <Property Name="relate_type_id" Type="Int32" />
+          <NavigationProperty Name="architecture" Relationship="Self.FK_related_architecture_architecture_parent" FromRole="related_architecture" ToRole="architecture" />
+          <NavigationProperty Name="architecture1" Relationship="Self.FK_related_architecture_related_architecture_child" FromRole="related_architecture" ToRole="architecture" />
+        </EntityType>
+        <EntityType Name="related_view">
+          <Key>
+            <PropertyRef Name="view_id" />
+            <PropertyRef Name="related_view_id" />
+            <PropertyRef Name="architecture_id" />
+            <PropertyRef Name="related_architecture_id" />
+          </Key>
+          <Property Name="view_id" Type="Int32" Nullable="false" />
+          <Property Name="related_view_id" Type="Int32" Nullable="false" />
+          <Property Name="architecture_id" Type="Int32" Nullable="false" />
+          <Property Name="related_architecture_id" Type="Int32" Nullable="false" />
+          <Property Name="relate_type_id" Type="Int32" />
+          <NavigationProperty Name="architecture" Relationship="Self.FK_related_view_primary_architecture" FromRole="related_view" ToRole="architecture" />
+          <NavigationProperty Name="architecture1" Relationship="Self.FK_related_view_related_architecture" FromRole="related_view" ToRole="architecture" />
+        </EntityType>
+        <EntityType Name="type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="category_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="201" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="FullNameLastFirst" Type="String" MaxLength="202" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocalDomainUserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifiedBy" Type="Int32" />
+          <Property Name="SuspendedDate" Type="DateTime" Precision="7" />
+          <Property Name="SuspenseJustification" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="SuspenseWarningEmailDate" Type="DateTime" Precision="7" />
+          <Property Name="SuspensedEmailDate" Type="DateTime" Precision="7" />
+          <Property Name="IsSuspensionManual" Type="Boolean" />
+          <Property Name="RobAcceptedDate" Type="DateTime" Precision="7" />
+          <Property Name="RobArCadie" Type="Boolean" Nullable="false" />
+          <Property Name="RobMdTws" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_User_User" FromRole="User" ToRole="User1" />
+          <NavigationProperty Name="User2" Relationship="Self.FK_User_User" FromRole="User1" ToRole="User" />
+          <NavigationProperty Name="User11" Relationship="Self.FK_User_User2" FromRole="User" ToRole="User1" />
+          <NavigationProperty Name="User3" Relationship="Self.FK_User_User2" FromRole="User1" ToRole="User" />
+        </EntityType>
+        <EntityType Name="vw_architecture_product_in_dw">
+          <Key>
+            <PropertyRef Name="arch_id" />
+            <PropertyRef Name="product_name" />
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="iads_version_id" />
+          </Key>
+          <Property Name="cat_arch_id" Type="Int32" />
+          <Property Name="arch_id" Type="Int32" Nullable="false" />
+          <Property Name="product_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="iads_version_name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="iads_version_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VW_Architecture_Viewer_Popup_Metadata">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="90" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="201" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="LastUpdatedDate" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="AccessLevel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FordesaProjectId" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_related_architecture_architecture_parent">
+          <End Role="architecture" Type="Self.architecture" Multiplicity="1" />
+          <End Role="related_architecture" Type="Self.related_architecture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="architecture">
+              <PropertyRef Name="architecture_id" />
+            </Principal>
+            <Dependent Role="related_architecture">
+              <PropertyRef Name="architecture_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_related_architecture_related_architecture_child">
+          <End Role="architecture" Type="Self.architecture" Multiplicity="1" />
+          <End Role="related_architecture" Type="Self.related_architecture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="architecture">
+              <PropertyRef Name="architecture_id" />
+            </Principal>
+            <Dependent Role="related_architecture">
+              <PropertyRef Name="related_architecture_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_related_view_primary_architecture">
+          <End Role="architecture" Type="Self.architecture" Multiplicity="1" />
+          <End Role="related_view" Type="Self.related_view" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="architecture">
+              <PropertyRef Name="architecture_id" />
+            </Principal>
+            <Dependent Role="related_view">
+              <PropertyRef Name="architecture_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_related_view_related_architecture">
+          <End Role="architecture" Type="Self.architecture" Multiplicity="1" />
+          <End Role="related_view" Type="Self.related_view" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="architecture">
+              <PropertyRef Name="architecture_id" />
+            </Principal>
+            <Dependent Role="related_view">
+              <PropertyRef Name="related_architecture_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="User1" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User2">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="User1" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="LastModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AlphaOneDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="access_level" EntityType="Self.access_level" />
+          <EntitySet Name="arches" EntityType="Self.arch" />
+          <EntitySet Name="architectures" EntityType="Self.architecture" />
+          <EntitySet Name="iads_version" EntityType="Self.iads_version" />
+          <EntitySet Name="IadsVersions" EntityType="Self.IadsVersion" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="projects" EntityType="Self.project" />
+          <EntitySet Name="relate_type" EntityType="Self.relate_type" />
+          <EntitySet Name="related_architecture" EntityType="Self.related_architecture" />
+          <EntitySet Name="related_view" EntityType="Self.related_view" />
+          <EntitySet Name="types" EntityType="Self.type" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="vw_architecture_product_in_dw" EntityType="Self.vw_architecture_product_in_dw" />
+          <EntitySet Name="VW_Architecture_Viewer_Popup_Metadata" EntityType="Self.VW_Architecture_Viewer_Popup_Metadata" />
+          <AssociationSet Name="FK_related_architecture_architecture_parent" Association="Self.FK_related_architecture_architecture_parent">
+            <End Role="architecture" EntitySet="architectures" />
+            <End Role="related_architecture" EntitySet="related_architecture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_related_architecture_related_architecture_child" Association="Self.FK_related_architecture_related_architecture_child">
+            <End Role="architecture" EntitySet="architectures" />
+            <End Role="related_architecture" EntitySet="related_architecture" />
+          </AssociationSet>
+          <AssociationSet Name="FK_related_view_primary_architecture" Association="Self.FK_related_view_primary_architecture">
+            <End Role="architecture" EntitySet="architectures" />
+            <End Role="related_view" EntitySet="related_view" />
+          </AssociationSet>
+          <AssociationSet Name="FK_related_view_related_architecture" Association="Self.FK_related_view_related_architecture">
+            <End Role="architecture" EntitySet="architectures" />
+            <End Role="related_view" EntitySet="related_view" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User2" Association="Self.FK_User_User2">
+            <End Role="User" EntitySet="Users" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AlphaOneModelStoreContainer" CdmEntityContainer="AlphaOneDbContext">
+          <EntitySetMapping Name="access_level">
+            <EntityTypeMapping TypeName="AlphaOneModel.access_level">
+              <MappingFragment StoreEntitySet="access_level">
+                <ScalarProperty Name="access_level_id" ColumnName="access_level_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="arches">
+            <EntityTypeMapping TypeName="AlphaOneModel.arch">
+              <MappingFragment StoreEntitySet="arch">
+                <ScalarProperty Name="arch_id" ColumnName="arch_id" />
+                <ScalarProperty Name="create_dttm" ColumnName="create_dttm" />
+                <ScalarProperty Name="narch_top_org_id" ColumnName="narch_top_org_id" />
+                <ScalarProperty Name="src_sys_id" ColumnName="src_sys_id" />
+                <ScalarProperty Name="stat_eff_dt" ColumnName="stat_eff_dt" />
+                <ScalarProperty Name="arch_descr_tx" ColumnName="arch_descr_tx" />
+                <ScalarProperty Name="arch_nm" ColumnName="arch_nm" />
+                <ScalarProperty Name="arch_maj_ver_qy" ColumnName="arch_maj_ver_qy" />
+                <ScalarProperty Name="arch_min_ver_qy" ColumnName="arch_min_ver_qy" />
+                <ScalarProperty Name="arch_rel_ver_cd" ColumnName="arch_rel_ver_cd" />
+                <ScalarProperty Name="arch_vw_ty_cd" ColumnName="arch_vw_ty_cd" />
+                <ScalarProperty Name="sarch_conf_ctrl_cd" ColumnName="sarch_conf_ctrl_cd" />
+                <ScalarProperty Name="sarch_ty_cd" ColumnName="sarch_ty_cd" />
+                <ScalarProperty Name="src_sys_user_id" ColumnName="src_sys_user_id" />
+                <ScalarProperty Name="src_sys_arch_key" ColumnName="src_sys_arch_key" />
+                <ScalarProperty Name="msn_id" ColumnName="msn_id" />
+                <ScalarProperty Name="csc_id" ColumnName="csc_id" />
+                <ScalarProperty Name="oparch_cat_cd" ColumnName="oparch_cat_cd" />
+                <ScalarProperty Name="arch_stat_nm" ColumnName="arch_stat_nm" />
+                <ScalarProperty Name="arch_type_nm" ColumnName="arch_type_nm" />
+                <ScalarProperty Name="arch_stat_cd" ColumnName="arch_stat_cd" />
+                <ScalarProperty Name="access_level_nm" ColumnName="access_level_nm" />
+                <ScalarProperty Name="app_version_tx" ColumnName="app_version_tx" />
+                <ScalarProperty Name="arch_poc_user_id" ColumnName="arch_poc_user_id" />
+                <ScalarProperty Name="arch_poc_user_nm" ColumnName="arch_poc_user_nm" />
+                <ScalarProperty Name="request_dt" ColumnName="request_dt" />
+                <ScalarProperty Name="src_sys_user_nm" ColumnName="src_sys_user_nm" />
+                <ScalarProperty Name="cat_src_sys_id" ColumnName="cat_src_sys_id" />
+                <ScalarProperty Name="cat_arch_id" ColumnName="cat_arch_id" />
+                <ScalarProperty Name="arch_vsn_reason_tx" ColumnName="arch_vsn_reason_tx" />
+                <ScalarProperty Name="sc_nm" ColumnName="sc_nm" />
+                <ScalarProperty Name="with_ier" ColumnName="with_ier" />
+                <ScalarProperty Name="iads_version_name" ColumnName="iads_version_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="architectures">
+            <EntityTypeMapping TypeName="AlphaOneModel.architecture">
+              <MappingFragment StoreEntitySet="architecture">
+                <ScalarProperty Name="architecture_id" ColumnName="architecture_id" />
+                <ScalarProperty Name="is_published" ColumnName="is_published" />
+                <ScalarProperty Name="last_modified_date" ColumnName="last_modified_date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="purpose" ColumnName="purpose" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="security_classification_id" ColumnName="security_classification_id" />
+                <ScalarProperty Name="access_level_id" ColumnName="access_level_id" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="mission_area_id" ColumnName="mission_area_id" />
+                <ScalarProperty Name="methodology_id" ColumnName="methodology_id" />
+                <ScalarProperty Name="development_tool_id" ColumnName="development_tool_id" />
+                <ScalarProperty Name="proponent_id" ColumnName="proponent_id" />
+                <ScalarProperty Name="project_start_date" ColumnName="project_start_date" />
+                <ScalarProperty Name="target_completion_date" ColumnName="target_completion_date" />
+                <ScalarProperty Name="validation_date" ColumnName="validation_date" />
+                <ScalarProperty Name="valid_until_date" ColumnName="valid_until_date" />
+                <ScalarProperty Name="developer_organization" ColumnName="developer_organization" />
+                <ScalarProperty Name="contributing_organizations" ColumnName="contributing_organizations" />
+                <ScalarProperty Name="validating_organizations" ColumnName="validating_organizations" />
+                <ScalarProperty Name="approval_authority_organization" ColumnName="approval_authority_organization" />
+                <ScalarProperty Name="approval_version_id" ColumnName="approval_version_id" />
+                <ScalarProperty Name="approval_version_change_date" ColumnName="approval_version_change_date" />
+                <ScalarProperty Name="related_av1_id" ColumnName="related_av1_id" />
+                <ScalarProperty Name="source_system_id" ColumnName="source_system_id" />
+                <ScalarProperty Name="dars_registration_date" ColumnName="dars_registration_date" />
+                <ScalarProperty Name="dars_timeframe_start_date" ColumnName="dars_timeframe_start_date" />
+                <ScalarProperty Name="dars_timeframe_end_date" ColumnName="dars_timeframe_end_date" />
+                <ScalarProperty Name="metadata_created_date" ColumnName="metadata_created_date" />
+                <ScalarProperty Name="metadata_last_updated_date" ColumnName="metadata_last_updated_date" />
+                <ScalarProperty Name="poc_authorization_user_id" ColumnName="poc_authorization_user_id" />
+                <ScalarProperty Name="is_av1_externally_funded_in" ColumnName="is_av1_externally_funded_in" />
+                <ScalarProperty Name="is_archived" ColumnName="is_archived" />
+                <ScalarProperty Name="iads_version_audit_id" ColumnName="iads_version_audit_id" />
+                <ScalarProperty Name="title_dissemination_id" ColumnName="title_dissemination_id" />
+                <ScalarProperty Name="proj_dissemination_id" ColumnName="proj_dissemination_id" />
+                <ScalarProperty Name="description_dissemination_id" ColumnName="description_dissemination_id" />
+                <ScalarProperty Name="owner_org_dissemination_id" ColumnName="owner_org_dissemination_id" />
+                <ScalarProperty Name="publishing_org_dissemination_id" ColumnName="publishing_org_dissemination_id" />
+                <ScalarProperty Name="owner_org_country_id" ColumnName="owner_org_country_id" />
+                <ScalarProperty Name="publishing_org_country_id" ColumnName="publishing_org_country_id" />
+                <ScalarProperty Name="contact_org_country_id" ColumnName="contact_org_country_id" />
+                <ScalarProperty Name="title_classification_id" ColumnName="title_classification_id" />
+                <ScalarProperty Name="proj_classification_justification" ColumnName="proj_classification_justification" />
+                <ScalarProperty Name="description_classification_id" ColumnName="description_classification_id" />
+                <ScalarProperty Name="poc_org_name" ColumnName="poc_org_name" />
+                <ScalarProperty Name="owner_org_name" ColumnName="owner_org_name" />
+                <ScalarProperty Name="contact_org_name" ColumnName="contact_org_name" />
+                <ScalarProperty Name="owner_org_classification_id" ColumnName="owner_org_classification_id" />
+                <ScalarProperty Name="publishing_org_classification_id" ColumnName="publishing_org_classification_id" />
+                <ScalarProperty Name="contact_org_classification_id" ColumnName="contact_org_classification_id" />
+                <ScalarProperty Name="aggregated_data_classification_justification" ColumnName="aggregated_data_classification_justification" />
+                <ScalarProperty Name="proj_classified_by" ColumnName="proj_classified_by" />
+                <ScalarProperty Name="project_creation_date" ColumnName="project_creation_date" />
+                <ScalarProperty Name="ecsd_submission_date" ColumnName="ecsd_submission_date" />
+                <ScalarProperty Name="contact_org_dissemination_id" ColumnName="contact_org_dissemination_id" />
+                <ScalarProperty Name="is_excluded_from_arch_navigation" ColumnName="is_excluded_from_arch_navigation" />
+                <ScalarProperty Name="bcac_id" ColumnName="bcac_id" />
+                <ScalarProperty Name="ekr_proj_url" ColumnName="ekr_proj_url" />
+                <ScalarProperty Name="time_period_reason" ColumnName="time_period_reason" />
+                <ScalarProperty Name="technical_poc_name" ColumnName="technical_poc_name" />
+                <ScalarProperty Name="technical_poc_email" ColumnName="technical_poc_email" />
+                <ScalarProperty Name="functional_poc_name" ColumnName="functional_poc_name" />
+                <ScalarProperty Name="functional_poc_email" ColumnName="functional_poc_email" />
+                <ScalarProperty Name="mission_thread_organization_id" ColumnName="mission_thread_organization_id" />
+                <ScalarProperty Name="mission_thread_capability_id" ColumnName="mission_thread_capability_id" />
+                <ScalarProperty Name="mission_thread_echelon_id" ColumnName="mission_thread_echelon_id" />
+                <ScalarProperty Name="mission_thread_mission_thread_id" ColumnName="mission_thread_mission_thread_id" />
+                <ScalarProperty Name="mission_thread_description" ColumnName="mission_thread_description" />
+                <ScalarProperty Name="mission_thread_primary_proponent_id" ColumnName="mission_thread_primary_proponent_id" />
+                <ScalarProperty Name="life_cycle_phase_id" ColumnName="life_cycle_phase_id" />
+                <ScalarProperty Name="baseline_state_id" ColumnName="baseline_state_id" />
+                <ScalarProperty Name="echelon_id" ColumnName="echelon_id" />
+                <ScalarProperty Name="functional_area_id" ColumnName="functional_area_id" />
+                <ScalarProperty Name="unit_size_id" ColumnName="unit_size_id" />
+                <ScalarProperty Name="unit_amplifier" ColumnName="unit_amplifier" />
+                <ScalarProperty Name="icon_id" ColumnName="icon_id" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iads_version">
+            <EntityTypeMapping TypeName="AlphaOneModel.iads_version">
+              <MappingFragment StoreEntitySet="iads_version">
+                <ScalarProperty Name="iads_version_id" ColumnName="iads_version_id" />
+                <ScalarProperty Name="iads_version_name" ColumnName="iads_version_name" />
+                <ScalarProperty Name="iads_version_desc" ColumnName="iads_version_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IadsVersions">
+            <EntityTypeMapping TypeName="AlphaOneModel.IadsVersion">
+              <MappingFragment StoreEntitySet="IadsVersion">
+                <ScalarProperty Name="arch_id" ColumnName="arch_id" />
+                <ScalarProperty Name="product_ID" ColumnName="product_ID" />
+                <ScalarProperty Name="iads_version_name" ColumnName="iads_version_name" />
+                <ScalarProperty Name="CAT_ARCH_ID" ColumnName="CAT_ARCH_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="AlphaOneModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="has_template" ColumnName="has_template" />
+                <ScalarProperty Name="create_dttm" ColumnName="create_dttm" />
+                <ScalarProperty Name="create_user_id" ColumnName="create_user_id" />
+                <ScalarProperty Name="updt_dttm" ColumnName="updt_dttm" />
+                <ScalarProperty Name="updt_user_id" ColumnName="updt_user_id" />
+                <ScalarProperty Name="short_description" ColumnName="short_description" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="is_dodaf_dw" ColumnName="is_dodaf_dw" />
+                <ScalarProperty Name="view_id" ColumnName="view_id" />
+                <ScalarProperty Name="iads_description" ColumnName="iads_description" />
+                <ScalarProperty Name="is_mission_thread_document_type" ColumnName="is_mission_thread_document_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projects">
+            <EntityTypeMapping TypeName="AlphaOneModel.project">
+              <MappingFragment StoreEntitySet="project">
+                <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+                <ScalarProperty Name="proj_nm" ColumnName="proj_nm" />
+                <ScalarProperty Name="proj_type_cd" ColumnName="proj_type_cd" />
+                <ScalarProperty Name="arch_cat_id" ColumnName="arch_cat_id" />
+                <ScalarProperty Name="sc_id" ColumnName="sc_id" />
+                <ScalarProperty Name="sc_cd" ColumnName="sc_cd" />
+                <ScalarProperty Name="proj_short_nm" ColumnName="proj_short_nm" />
+                <ScalarProperty Name="proj_stat_cd" ColumnName="proj_stat_cd" />
+                <ScalarProperty Name="proj_stat_eff_dt" ColumnName="proj_stat_eff_dt" />
+                <ScalarProperty Name="create_dttm" ColumnName="create_dttm" />
+                <ScalarProperty Name="create_user_id" ColumnName="create_user_id" />
+                <ScalarProperty Name="updt_dttm" ColumnName="updt_dttm" />
+                <ScalarProperty Name="updt_user_id" ColumnName="updt_user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="relate_type">
+            <EntityTypeMapping TypeName="AlphaOneModel.relate_type">
+              <MappingFragment StoreEntitySet="relate_type">
+                <ScalarProperty Name="relate_type_id" ColumnName="relate_type_id" />
+                <ScalarProperty Name="relate_type_name" ColumnName="relate_type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="related_architecture">
+            <EntityTypeMapping TypeName="AlphaOneModel.related_architecture">
+              <MappingFragment StoreEntitySet="related_architecture">
+                <ScalarProperty Name="architecture_id" ColumnName="architecture_id" />
+                <ScalarProperty Name="related_architecture_id" ColumnName="related_architecture_id" />
+                <ScalarProperty Name="relate_type_id" ColumnName="relate_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="related_view">
+            <EntityTypeMapping TypeName="AlphaOneModel.related_view">
+              <MappingFragment StoreEntitySet="related_view">
+                <ScalarProperty Name="view_id" ColumnName="view_id" />
+                <ScalarProperty Name="related_view_id" ColumnName="related_view_id" />
+                <ScalarProperty Name="architecture_id" ColumnName="architecture_id" />
+                <ScalarProperty Name="related_architecture_id" ColumnName="related_architecture_id" />
+                <ScalarProperty Name="relate_type_id" ColumnName="relate_type_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="types">
+            <EntityTypeMapping TypeName="AlphaOneModel.type">
+              <MappingFragment StoreEntitySet="type">
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="AlphaOneModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="FullNameLastFirst" ColumnName="FullNameLastFirst" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="LocalDomainUserName" ColumnName="LocalDomainUserName" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+                <ScalarProperty Name="SuspendedDate" ColumnName="SuspendedDate" />
+                <ScalarProperty Name="SuspenseJustification" ColumnName="SuspenseJustification" />
+                <ScalarProperty Name="SuspenseWarningEmailDate" ColumnName="SuspenseWarningEmailDate" />
+                <ScalarProperty Name="SuspensedEmailDate" ColumnName="SuspensedEmailDate" />
+                <ScalarProperty Name="IsSuspensionManual" ColumnName="IsSuspensionManual" />
+                <ScalarProperty Name="RobAcceptedDate" ColumnName="RobAcceptedDate" />
+                <ScalarProperty Name="RobArCadie" ColumnName="RobArCadie" />
+                <ScalarProperty Name="RobMdTws" ColumnName="RobMdTws" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_architecture_product_in_dw">
+            <EntityTypeMapping TypeName="AlphaOneModel.vw_architecture_product_in_dw">
+              <MappingFragment StoreEntitySet="vw_architecture_product_in_dw">
+                <ScalarProperty Name="cat_arch_id" ColumnName="cat_arch_id" />
+                <ScalarProperty Name="arch_id" ColumnName="arch_id" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="iads_version_name" ColumnName="iads_version_name" />
+                <ScalarProperty Name="iads_version_id" ColumnName="iads_version_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_Architecture_Viewer_Popup_Metadata">
+            <EntityTypeMapping TypeName="AlphaOneModel.VW_Architecture_Viewer_Popup_Metadata">
+              <MappingFragment StoreEntitySet="VW_Architecture_Viewer_Popup_Metadata">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedByEmail" ColumnName="CreatedByEmail" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+                <ScalarProperty Name="FordesaProjectId" ColumnName="FordesaProjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

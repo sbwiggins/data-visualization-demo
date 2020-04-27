@@ -1,0 +1,17 @@
+<div id='select-drop-down'>
+    <dx-drop-down-box 
+        [inputAttr]="{ id: 'select-text-field' }" 
+        valueExpr="architectureName" 
+        [deferRendering]="false"
+        placeholder="Select an Architecture..." 
+        [showClearButton]="false"
+        (onInitialized)="saveGridInstance($event)">
+        <div *dxTemplate="let data of 'content'">
+           <select-architecture-grid 
+                [dxDropDownBox] = "dxDropDownBox"
+                (change)="onRowChanged($event)"></select-architecture-grid> 
+        </div> 
+    </dx-drop-down-box>
+
+
+</div>
